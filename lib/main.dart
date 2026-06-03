@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'tela_login.dart';
 import 'package:device_preview/device_preview.dart';
+import 'tela_login.dart';
 
 void main() {
-  runApp(DevicePreview(
-  builder: (context) => MyApp()
+  runApp(
+    DevicePreview(
+      enabled: true, 
+      builder: (context) => const MyApp(),
     ),
   );
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -15,12 +18,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Desafio Login',
+      title: 'App Flutter - Exercício 4',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.grey[100], 
       ),
-      home: const LoginScreen(),
+      home: const TelaLogin(),
     );
-
   }
 }
